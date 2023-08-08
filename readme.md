@@ -54,27 +54,14 @@ the `with()` method and render the content with the `render()` method.
 
 ### Methods
 
-#### `withObject(mixed $data): self`
+#### `with(mixed $data, string $key = null): self`
 
-The `withObject()` method allows you to add an object to the data array. The data passed through this method will be
-merged with the existing data.
-
-Parameters:
-
-- `$data`: The object to add to the data array.
-
-Returns:
-
-- `self`: Returns the current instance of the Fuse object.
-
-#### `with(string $key, mixed $value): self`
-
-The `with()` method allows you to add a key-value pair to the data array.
+The `with()` method allows you to add a key-value pair to the data array. You can add objects with leaving $key variable empty.
 
 Parameters:
 
 - `$key`: The key.
-- `$value`: The value.
+- `$data`: The data object.
 
 Returns:
 
@@ -99,42 +86,42 @@ Fuse supports several template syntax features that enable you to control the re
 
 #### Conditional Statements
 
-- You can use `@if`, `@elseif`, and `@else` directives for conditional statements.
+- You can use `@If`, `@ElseIf`, and `@Else` directives for conditional statements.
 
 ```php
-@if ($condition)
+@If ($condition)
     // Content to render if the condition is true.
-@elseif ($another_condition)
+@ElseIf ($another_condition)
     // Content to render if the second condition is true.
-@else
+@Else
     // Content to render if none of the conditions are true.
-@endif
+@endIf
 ```
 
 #### Loops
 
-- For loops using `@for`:
+- For loops using `@For`:
 
 ```php
-@for ($i = 0; $i < 5; $i++)
+@For ($i = 0; $i < 5; $i++)
     // Content to render for each iteration.
-@endfor
+@endFor
 ```
 
-- ForEach loops using `@foreach`:
+- ForEach loops using `@Foreach`:
 
 ```php
-@foreach ($array as $item)
+@Foreach ($array as $item)
     // Content to render for each item in the array.
-@endforeach
+@endForeach
 ```
 
-- While loops using `@while`:
+- While loops using `@While`:
 
 ```php
-@while ($condition)
+@While ($condition)
     // Content to render while the condition is true.
-@endwhile
+@endWhile
 ```
 
 #### Variable Declarations
