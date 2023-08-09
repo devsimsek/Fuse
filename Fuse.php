@@ -75,7 +75,7 @@ class Fuse
 
     private function parseVariable(string $input)
     {
-        return preg_replace_callback('/{{ ?(.*) ?}}/', function ($matches) {
+        return preg_replace_callback('/{{ ?(.*?) ?}}/', function ($matches) {
             $variable = trim($matches[1]);
             return '<?php echo htmlspecialchars(' . $variable . ', ENT_QUOTES); ?>';
         }, $input);
